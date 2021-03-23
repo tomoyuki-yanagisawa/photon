@@ -1,7 +1,7 @@
 /*!
  * =====================================================
  * Photon v0.1.2
- * Copyright 2016 Connor Sears
+ * Copyright 2021 Connor Sears
  * Licensed under MIT (https://github.com/connors/proton/blob/master/LICENSE)
  *
  * v0.1.2 designed by @connors.
@@ -378,6 +378,19 @@ h6 {
   background-image: linear-gradient(to bottom, #fcfcfc 0%, #f1f1f1 100%);
 }
 .btn-default:active {
+  background-color: #ddd;
+  background-image: none;
+}
+
+.btn-system {
+  color: #333;
+  border-top-color: #c2c0c2;
+  border-right-color: #c2c0c2;
+  border-bottom-color: #a19fa1;
+  border-left-color: #c2c0c2;
+  background-color: #fff;
+}
+.btn-system:active {
   background-color: #ddd;
   background-image: none;
 }

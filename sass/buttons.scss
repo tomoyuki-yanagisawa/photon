@@ -52,6 +52,20 @@
   }
 }
 
+.btn-system {
+  color: $gray-color;
+  border-top-color: $dark-border-color;
+  border-right-color: $dark-border-color;
+  border-bottom-color: $darker-bottom-border-color;
+  border-left-color: $dark-border-color;
+  background-color: #fff;
+
+  &:active {
+    background-color: #ddd;
+    background-image: none;
+  }
+}
+
 // Button variations
 .btn-primary,
 .btn-positive,
