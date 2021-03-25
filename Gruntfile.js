@@ -7,6 +7,11 @@
 module.exports = function(grunt) {
   'use strict';
 
+  const Fiber = require('fibers');
+  const sass = require('sass');
+
+  require('load-grunt-tasks')(grunt);
+
   // Force use of Unix newlines
   grunt.util.linefeed = '\n';
 
@@ -39,20 +44,17 @@ module.exports = function(grunt) {
 
     sass: {
       options: {
-        sourcemap: 'none',
-        style: 'expanded',
-        unixNewlines: true
+        implementation: sass,
+        fiber: Fiber,
+        sourceMap: false
       },
-      core: {
-        src: 'sass/photon.scss',
-        dest: '<%= meta.distPath %>css/<%= pkg.name %>.css'
-      },
-      docs: {
-        src: 'sass/docs.scss',
-        dest: '<%= meta.docsAssetsPath %>css/docs.css'
+      dist: {
+        files: {
+          '<%= meta.distPath %>css/<%= pkg.name %>.css': 'sass/photon.scss',
+          '<%= meta.docsAssetsPath %>css/docs.css': 'sass/docs.scss',
+        }
       }
-		},
-
+    },
     usebanner: {
       dist: {
         options: {
