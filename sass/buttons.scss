@@ -142,3 +142,22 @@
   margin-left: 5px;
   content: '\e873';
 }
+
+// Selected state
+.btn-default.active,
+.btn-primary.active,
+.btn-positive.active,
+.btn-negative.active,
+.btn-warning.active {
+  color: #fff;
+  border: 1px solid transparent;
+  background-color: #6d6c6d;
+  background-image: none;
+}
+
+.btn-system.active {
+  color: #fff;
+  border-color: #388df8;
+  border-bottom-color: darken(#388df8, 15%);
+  @include linear-gradient(#6eb4f7, #1a82fb);
+}

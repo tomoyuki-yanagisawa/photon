@@ -1,0 +1,17 @@
+.segment {
+  margin: 20px;
+  padding: 0px 10px 10px 10px;
+  background-color: #e5e5e5;
+  border: 1px solid #dfdfdf;
+  border-top: 1px solid #d6d6d6;
+  border-radius: $default-border-radius;
+}
+
+.segment-actions {
+  text-align: center;
+
+  > .btn-group {
+    position: relative;
+    margin-top: -23px;
+  }
+}
