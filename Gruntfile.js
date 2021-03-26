@@ -111,22 +111,17 @@ module.exports = function(grunt) {
       },
       html: {
         files: '<%= meta.docsPath %>**',
-        tasks: ['jekyll']
+        tasks: ['docs']
       }
     },
-
-    jekyll: {
-      options: {
-        config: '_config.yml'
-      },
-      docs: {},
-      github: {
+    shell: {
+      eleventy: {
+        command: 'npx @11ty/eleventy',
         options: {
-          raw: 'github: true'
+          execOptions: {}
         }
-      }
+      },
     },
-
     connect: {
       site: {
         options: {
@@ -149,7 +144,8 @@ module.exports = function(grunt) {
   // Tasks
   grunt.registerTask('dist-css', ['sass', 'usebanner', 'cssmin']);
   grunt.registerTask('dist', ['clean', 'dist-css', 'copy']);
-  grunt.registerTask('server', ['dist', 'jekyll:docs', 'connect', 'watch']);
+  grunt.registerTask('docs', ['shell:eleventy']);
+  grunt.registerTask('server', ['dist', 'docs', 'connect', 'watch']);
 
   grunt.registerTask('default', ['dist']);
 };
