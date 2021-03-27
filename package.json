@@ -18,6 +18,9 @@
     "url": "https://github.com/connors/photon/issues"
   },
   "scripts": {
+    "docs:build": "npx @11ty/eleventy",
+    "docs:serve": "npx @11ty/eleventy --serve --watch",
+    "docs:servei": "npx @11ty/eleventy --serve --watch --incremental",
     "start": "electron dist/template-app",
     "build": "grunt"
   },
